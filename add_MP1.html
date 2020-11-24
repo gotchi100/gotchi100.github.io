@@ -1,0 +1,340 @@
+<html>
+    <head>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            body {
+                margin: 0;
+                font-family: 'Press Start 2P', cursive;
+            }
+
+            header {
+                display: flex;
+                background-color: orangered;   
+                justify-content: center;
+                width: 100%;
+             
+            }
+
+            nav {
+                display: flex;
+                width: 600px;
+                height: 50px;
+                
+            }
+
+            nav a {
+                display: flex;
+                color: white;
+                list-style: none;
+                flex-grow: 1;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            nav a li {
+                display: inline;
+            }
+
+
+            #main-container {
+                display: flex;
+                width:100%;
+                justify-content: center;
+            }
+
+            #main-content {
+                width: 600px;
+                height: 500px;
+            }
+
+            input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit]{
+                width: 100%;
+                background-color: orangered; 
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-family: Arial, cursive;
+            }
+
+        </style>
+        
+
+    </head>
+    <body>
+        <header>
+                <nav>
+                    <a href="edit.html">
+                        <li>Return to Resume</li>
+                    </a>
+                </nav>
+            </header>
+            <div id="main-container">
+                <div id="main-content" >
+                    <h1 class="nav-element" id="education-section">Education</h1>
+                    <form id="education-form" onsubmit="return false">
+                        <label for="add_education">Education:</label>
+                        <input type="text" id="add_education">
+    
+                        <label for="add_duration_education">duration:</label>
+                        <input type="text" id="add_duration_education">
+    
+                        <label for="add_info_education">info:</label>
+                        <input type="text" id="add_info_education">
+    
+                        <input type="submit" value="Add" onclick="add_new_education()"/>
+                    </form>
+
+                    <h1 class="nav-element" id="organization-section">Organization</h1>
+                    <form id="organization-form" onsubmit="return false">
+                        <label for="add_organization">Organization:</label>
+                        <input type="text" id="add_organization">
+    
+                        <label for="add_duration_organization">duration:</label>
+                        <input type="text" id="add_duration_organization">
+    
+                        <label for="add_info_organization">info:</label>
+                        <input type="text" id="add_info_organization">
+    
+                        <input type="submit" value="Add" onclick="add_new_organization()"/>
+                    </form>
+
+                    <h1 class="nav-element" id="work-section">Works</h1>
+                    <form id="work-form" onsubmit="return false">
+                        <label for="add_work">Work:</label>
+                        <input type="text" id="add_work">
+    
+                        <label for="add_duration_work">duration:</label>
+                        <input type="text" id="add_duration_work">
+    
+                        <label for="add_info_work">info:</label>
+                        <input type="text" id="add_info_work">
+    
+                        <input type="submit" value="Add" onclick="add_new_works()"/>
+                    </form>
+
+                    <h1 class="nav-element" id="about-section">About</h1>
+                    <form id="about-form" onsubmit="return false">
+                        <label for="add_about_info">info</label>
+                        <input type="text" id="add_new_info">
+    
+                        <input type="submit" value="Update" onclick="add_new_about_info()"/>
+                    </form>
+
+                    <h1 class="nav-element" id="contact-section">Contact</h1>
+                    <form id="contact-form" onsubmit="return false">
+                        <label for="add_contact_linkedin">LinkedIn</label>
+                        <input type="text" id="add_new_linkedin">
+
+                        <input type="submit" value="Update" onclick="add_new_contact_linkedin()"/>
+
+                        <label for="add_contact_github">Github</label>
+                        <input type="text" id="add_new_github">
+
+                        <input type="submit" value="Update" onclick="add_new_contact_github()"/>
+
+                        <label for="add_contact_twitter">Twitter</label>
+                        <input type="text" id="add_new_twitter">
+
+                        <input type="submit" value="Update" onclick="add_new_contact_twitter()"/>
+                    </form>
+
+                    </section>
+                </div>
+            </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBTOsVoZ1Db5lSsLYB7F7rsRpRqErN0wdc",
+            authDomain: "mp-1-6bb25.firebaseapp.com",
+            databaseURL: "https://mp-1-6bb25.firebaseio.com",
+            projectId: "mp-1-6bb25",
+            storageBucket: "mp-1-6bb25.appspot.com",
+            messagingSenderId: "770183074723",
+            appId: "1:770183074723:web:ed6b31108bf78ac337c016",
+            measurementId: "G-72G26HWQR6"
+        };
+        // Initialize Firebase
+        var app = firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var db = firebase.firestore(app)
+        </script>   
+
+<script>
+        function add_new_education() {
+            console.log('inside app pokemon')
+            var add_education = document.getElementById("add_education").value;
+            var add_duration_education = document.getElementById("add_duration_education").value;
+            var add_info_education = document.getElementById("add_info_education").value;
+            
+            db.collection('Education').add({
+                education: add_education,
+                duration: add_duration_education,
+                info: add_info_education
+            })
+
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                location.reload();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                alert("Error in adding Education");
+            });
+
+            alert("Education is added");
+        }
+</script>
+
+<script>
+        function add_new_organization() {
+            console.log('inside app organization')
+            var add_organization = document.getElementById("add_organization").value;
+            var add_duration_organization = document.getElementById("add_duration_organization").value;
+            var add_info_organization = document.getElementById("add_info_organization").value;
+
+            
+            db.collection('Organization').add({
+                organization: add_organization,
+                duration: add_duration_organization,
+                info: add_info_organization
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                location.reload();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                alert("Error in adding Organization");
+            });
+
+            alert("Organization is added");
+        }    
+</script>
+
+<script>
+    function add_new_works() {
+        console.log('inside app works')
+        var add_work = document.getElementById("add_work").value;
+        var add_duration_work = document.getElementById("add_duration_work").value;
+        var add_info_work = document.getElementById("add_info_work").value;
+
+        
+        db.collection('Works').add({
+            work: add_work,
+            duration: add_duration_work,
+            info: add_info_work
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            location.reload();
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+            alert("Error in adding Organization");
+        });
+
+        alert("Work is added");
+    }    
+</script>
+
+<script>
+    function add_new_about_info() {
+        console.log('inside app about')
+        var add_new_info = document.getElementById("add_new_info").value;
+
+        db.collection('Name').doc('qg1mjmSrELhcV8dlIOCd').update({
+            Intro: add_new_info
+        });
+        alert("About info is updated");
+    }    
+</script>
+
+<script>
+        function add_new_contact_linkedin() {
+        console.log('inside app linkedin')
+        var add_new_linkedin = document.getElementById("add_new_linkedin").value;
+
+        db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+            Linked_In: add_new_linkedin
+        })
+        .then(function(docRef) {
+            location.reload();
+        })
+        .catch(function(error) {
+            alert("Error in updating linkedin");
+        });
+
+        alert("LinkedIn is updated"); 
+        }
+</script>
+
+<script>
+    function add_new_contact_github() {
+    console.log('inside app github')
+    var add_new_github = document.getElementById("add_new_github").value;
+
+    db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+        GitHub: add_new_github
+    })
+    .then(function(docRef) {
+        location.reload();
+    })
+    .catch(function(error) {
+        alert("Error in updating github");
+    });
+
+    alert("Github is updated"); 
+    }
+</script>
+
+<script>
+    function add_new_contact_twitter() {
+    console.log('inside app github')
+    var add_new_twitter = document.getElementById("add_new_twitter").value;
+
+    db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+        Twitter: add_new_twitter
+    })
+    .then(function(docRef) {
+        location.reload();
+    })
+    .catch(function(error) {
+        alert("Error in updating Twitter");
+    });
+
+    alert("Twitter is updated"); 
+    }
+</script>
+
+
+
+    </body>
+</html>
