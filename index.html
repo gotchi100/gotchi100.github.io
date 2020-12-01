@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none"></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Organization">Organization</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Works">Works</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="edit.html">Login to Edit</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content" >
+                    <h1 class="mb-0" id ="name_id">
+                    </h1>
+                    <div class="social-icons">
+                        <a class="social-icon" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" id="github"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" id="twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <!-- Education-->
+            <section class="resume-section" id="Education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id ="education_id">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Organization-->
+            <section class="resume-section" id="Organization">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Organization</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id = "organization_id">
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Works-->
+            <section class="resume-section" id="Works">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Works</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id = "works_id">
+                </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+        
+        <!-- RENDER "ABOUT ME" content -->
+        <script>
+               function render_name(first_name, last_name, Intro, email) {
+                var resume_section_content = document.createElement("div");
+                var resume_first_name = document.createElement("h1");
+                var resume_last_name = document.createElement("span");
+                var resume_email = document.createElement("div");
+                var resume_intro = document.createElement("p");
+
+                resume_section_content.className = "name";
+                resume_first_name.className = "f_name";
+                resume_last_name.className = "text-primary";
+                resume_email.className = "subheading mb-5";
+                resume_intro.className = "lead mb-5";
+
+                resume_first_name.innerHTML = first_name;
+                resume_last_name.innerHTML = last_name;
+                resume_email.innerHTML = email;
+                resume_intro.innerHTML = Intro;
+
+                resume_section_content.appendChild(resume_first_name);
+                resume_section_content.appendChild(resume_last_name);
+                resume_section_content.appendChild(resume_email);
+                resume_section_content.appendChild(resume_intro);
+                
+
+                document.getElementById("name_id").appendChild(resume_section_content);
+            }       
+        </script>
+
+        <!-- RENDER "EDUCATION" CONTENT -->
+
+        <script>
+            function render_education(education,duration, info){
+                var resume_education_content = document.createElement("div");
+                var resume_education = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_education_info = document.createElement("p");
+
+                resume_education_content.className = "education";
+                resume_education_content.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_education_info.className = "info";
+
+                resume_education.innerHTML = education;
+                resume_duration.innerHTML = duration;
+                resume_education_info.innerHTML = info;
+                
+                
+                resume_education_content.appendChild(resume_education);
+                resume_education_content.appendChild(resume_duration);
+                resume_education_content.appendChild(resume_education_info);
+
+                document.getElementById("education_id").appendChild(resume_education_content);
+
+
+            }
+        </script>
+
+        <!-- RENDER "ORGANIZATION" CONTENT -->
+        <script>
+            function render_organization(organization,duration, info){
+                var resume_organization_content = document.createElement("div");
+                var resume_organization = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_organization_info = document.createElement("p");
+
+                resume_organization_content.className = "organization";
+                resume_organization.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_organization_info.className = "info";
+
+                resume_organization.innerHTML = organization;
+                resume_duration.innerHTML = duration;
+                resume_organization_info.innerHTML = info;
+                
+                
+                resume_organization_content.appendChild(resume_organization);
+                resume_organization_content.appendChild(resume_duration);
+                resume_organization_content.appendChild(resume_organization_info);
+
+                document.getElementById("organization_id").appendChild(resume_organization_content);
+            }
+        </script>
+
+        <!-- RENDER "WORKS" CONTENT -->
+        <script>
+            function render_works(works,duration, info){
+                var resume_works_content = document.createElement("div");
+                var resume_works = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_works_info = document.createElement("p");
+
+                resume_works_content.className = "works";
+                resume_works.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_works_info.className = "info";
+
+                resume_works.innerHTML = works;
+                resume_duration.innerHTML = duration;
+                resume_works_info.innerHTML = info;
+                
+                
+                resume_works_content.appendChild(resume_works);
+                resume_works_content.appendChild(resume_duration);
+                resume_works_content.appendChild(resume_works_info);
+
+                document.getElementById("works_id").appendChild(resume_works_content);
+            }
+        </script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyBTOsVoZ1Db5lSsLYB7F7rsRpRqErN0wdc",
+                authDomain: "mp-1-6bb25.firebaseapp.com",
+                databaseURL: "https://mp-1-6bb25.firebaseio.com",
+                projectId: "mp-1-6bb25",
+                storageBucket: "mp-1-6bb25.appspot.com",
+                messagingSenderId: "770183074723",
+                appId: "1:770183074723:web:ed6b31108bf78ac337c016",
+                measurementId: "G-72G26HWQR6"
+            };
+            // Initialize Firebase
+            var app = firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            var db = firebase.firestore(app);
+            
+            // FETCH NAME
+            db.collection("Name").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().first_name}`);
+                        console.log(`  ${doc.data().last_name}`);
+                        console.log(`  ${doc.data().Intro}`);
+                        console.log(`  ${doc.data().email}`);
+                        render_name(doc.data().first_name, doc.data().last_name, doc.data().Intro, doc.data().email);
+                    });
+                });
+
+            // FETCH CONTACT
+            db.collection("Contact").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().Twitter}`);
+                        console.log(`  ${doc.data().GitHub}`);
+                        console.log(`  ${doc.data().Linked_In}`);
+                        
+                        document.getElementById("linkedin").href = doc.data().Linked_In;
+                        document.getElementById("twitter").href = doc.data().Twitter;
+                        document.getElementById("github").href = doc.data().GitHub;
+
+                    });
+                });
+
+            // FETCH EDUCATION
+            db.collection("Education").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().education}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_education(doc.data().education, doc.data().duration, doc.data().info);
+                    });
+                });
+
+            // FETCH ORGANIZATION
+
+            db.collection("Organization").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().organization}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_organization(doc.data().organization, doc.data().duration, doc.data().info);
+                    });
+                });
+
+            // FETCH WORKS
+
+            db.collection("Works").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().work}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_works(doc.data().work, doc.data().duration, doc.data().info);
+                    });
+                });
+
+            
+
+        </script>                                                                               
+    </body>
+</html>
