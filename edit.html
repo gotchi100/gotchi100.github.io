@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            form{
+                margin: auto;
+                width: 60%;
+                border: 3px solid orangered;
+                padding: 10px;                    
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none"></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Organization">Organization</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Works">Works</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content" >
+                    <h1 class="mb-0" id ="name_id">
+                    </h1>
+                    <div class="social-icons">
+                        <a class="social-icon" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" id="github"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" id="twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>
+            <form id="about-form" onsubmit="return false">
+                <label for="add_about_info">info</label>
+                <input type="text" id="add_new_info">
+
+                <input type="submit" value="Update" onclick="add_new_about_info()"/>
+            </form>
+            <form id="contact-form" onsubmit="return false">
+                <label for="add_contact_linkedin">LinkedIn</label>
+                <input type="text" id="add_new_linkedin">
+
+                <input type="submit" value="Update" onclick="add_new_contact_linkedin()"/>
+                <br>
+                <label for="add_contact_github">Github</label>
+                <input type="text" id="add_new_github">
+        
+                <input type="submit" value="Update" onclick="add_new_contact_github()"/>
+                <br>
+                <label for="add_contact_twitter">Twitter</label>
+                <input type="text" id="add_new_twitter">
+
+                <input type="submit" value="Update" onclick="add_new_contact_twitter()"/>
+            </form>
+            <hr class="m-0" />
+
+            <!-- Education-->
+            <section class="resume-section" id="Education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id ="education_id">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <form id="education-form" onsubmit="return false">
+                <label for="add_education">Education:</label>
+                <input type="text" id="add_education">
+                <br>
+                <label for="add_duration_education">duration:</label>
+                <input type="text" id="add_duration_education">
+                <br>
+                <label for="add_info_education">info:</label>
+                <input type="text" id="add_info_education">
+
+                <input type="submit" value="Add" onclick="add_new_education()"/>
+            </form>
+
+
+            <hr class="m-0" />
+            <!-- Organization-->
+            <section class="resume-section" id="Organization">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Organization</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id = "organization_id">
+                </div>
+            </section>
+            <form id="organization-form" onsubmit="return false">
+                <label for="add_organization">Organization:</label>
+                <input type="text" id="add_organization">
+                <br>    
+                <label for="add_duration_organization">duration:</label>
+                <input type="text" id="add_duration_organization">
+                <br>    
+                <label for="add_info_organization">info:</label>
+                <input type="text" id="add_info_organization">
+                <input type="submit" value="Add" onclick="add_new_organization()"/>
+            </form>
+            <hr class="m-0" />
+            <!-- Works-->
+            <section class="resume-section" id="Works">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Works</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1" id = "works_id">
+                </div>
+            </section>
+            <form id="work-form" onsubmit="return false">
+                <label for="add_work">Work:</label>
+                <input type="text" id="add_work">
+                <br>
+                <label for="add_duration_work">duration:</label>
+                <input type="text" id="add_duration_work">
+                <br>
+                <label for="add_info_work">info:</label>
+                <input type="text" id="add_info_work">
+                <input type="submit" value="Add" onclick="add_new_works()"/>
+            </form>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+        
+        <!-- RENDER "ABOUT ME" content -->
+        <script>
+               function render_name(first_name, last_name, Intro, email) {
+                var resume_section_content = document.createElement("div");
+                var resume_first_name = document.createElement("h1");
+                var resume_last_name = document.createElement("span");
+                var resume_email = document.createElement("div");
+                var resume_intro = document.createElement("p");
+
+                resume_section_content.className = "name";
+                resume_first_name.className = "f_name";
+                resume_last_name.className = "text-primary";
+                resume_email.className = "subheading mb-5";
+                resume_intro.className = "lead mb-5";
+
+
+                resume_first_name.innerHTML = first_name;
+                resume_last_name.innerHTML = last_name;
+                resume_email.innerHTML = email;
+                resume_intro.innerHTML = Intro;
+
+                resume_section_content.appendChild(resume_first_name);
+                resume_section_content.appendChild(resume_last_name);
+                resume_section_content.appendChild(resume_email);
+                resume_section_content.appendChild(resume_intro);
+
+                document.getElementById("name_id").appendChild(resume_section_content);
+            }       
+        </script>
+
+        <!-- RENDER "EDUCATION" CONTENT -->
+
+        <script>
+            function render_education(id,education,duration, info){
+                var resume_education_content = document.createElement("div");
+                var resume_education = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_education_info = document.createElement("p");
+                var remove_button = document.createElement("input");
+
+
+                resume_education_content.className = "education";
+                resume_education_content.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_education_info.className = "info";
+
+                remove_button.type = "button";
+                remove_button.className = "education-remove";
+                remove_button.onclick = function(){
+                    remove_education(id)
+                };
+
+                resume_education.innerHTML = education;
+                resume_duration.innerHTML = duration;
+                resume_education_info.innerHTML = info;
+                remove_button.value = "remove"
+
+                
+                
+                resume_education_content.appendChild(resume_education);
+                resume_education_content.appendChild(resume_duration);
+                resume_education_content.appendChild(resume_education_info);
+                resume_education_content.appendChild(remove_button);
+
+                document.getElementById("education_id").appendChild(resume_education_content);
+
+
+            }
+        </script>
+
+        <!-- RENDER "ORGANIZATION" CONTENT -->
+        <script>
+            function render_organization(id,organization,duration, info){
+                var resume_organization_content = document.createElement("div");
+                var resume_organization = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_organization_info = document.createElement("p");
+                var remove_button = document.createElement("input");
+
+                resume_organization_content.className = "organization";
+                resume_organization.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_organization_info.className = "info";
+
+                remove_button.type = "button";
+                remove_button.className = "organization-remove";
+                remove_button.onclick = function(){
+                    remove_organization(id)
+                };
+
+                resume_organization.innerHTML = organization;
+                resume_duration.innerHTML = duration;
+                resume_organization_info.innerHTML = info;
+                remove_button.value = "remove"
+
+                
+                
+                resume_organization_content.appendChild(resume_organization);
+                resume_organization_content.appendChild(resume_duration);
+                resume_organization_content.appendChild(resume_organization_info);
+                resume_organization_content.appendChild(remove_button);
+
+                document.getElementById("organization_id").appendChild(resume_organization_content);
+            }
+        </script>
+
+        <!-- RENDER "WORKS" CONTENT -->
+        <script>
+            function render_works(id,works,duration, info){
+                var resume_works_content = document.createElement("div");
+                var resume_works = document.createElement("h3");
+                var resume_duration = document.createElement("div");
+                var resume_works_info = document.createElement("p");
+                var remove_button = document.createElement("input");
+
+
+                resume_works_content.className = "works";
+                resume_works.className = "mb-0";
+                resume_duration.className = "subheading mb-3";
+                resume_works_info.className = "info";
+
+                remove_button.type = "button";
+                remove_button.className = "works-remove";
+                remove_button.onclick = function(){
+                    remove_works(id)
+                };
+                resume_works.innerHTML = works;
+                resume_duration.innerHTML = duration;
+                resume_works_info.innerHTML = info;
+                remove_button.value = "remove"
+                
+                resume_works_content.appendChild(resume_works);
+                resume_works_content.appendChild(resume_duration);
+                resume_works_content.appendChild(resume_works_info);
+                resume_works_content.appendChild(remove_button);
+
+
+                document.getElementById("works_id").appendChild(resume_works_content);
+            }
+        </script>
+
+        <script>
+                function remove_education(id) {
+                db.collection('Education').doc(id).delete()
+                .then(function(docRef){
+                    location.reload();
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                    alert("Error in deleting info");
+                });
+                alert("Education has been removed");
+            }
+        </script>
+
+        <script>
+            function remove_organization(id) {
+            db.collection('Organization').doc(id).delete()
+            .then(function(docRef){
+                location.reload();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                alert("Error in deleting info");
+            });
+            alert("Organization has been removed");
+        }
+        </script>
+
+        <script>
+            function remove_works(id) {
+            db.collection('Works').doc(id).delete()
+            .then(function(docRef){
+                location.reload();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                alert("Error in deleting info");
+            });
+            alert("Works has been removed");
+        }
+        </script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyBTOsVoZ1Db5lSsLYB7F7rsRpRqErN0wdc",
+                authDomain: "mp-1-6bb25.firebaseapp.com",
+                databaseURL: "https://mp-1-6bb25.firebaseio.com",
+                projectId: "mp-1-6bb25",
+                storageBucket: "mp-1-6bb25.appspot.com",
+                messagingSenderId: "770183074723",
+                appId: "1:770183074723:web:ed6b31108bf78ac337c016",
+                measurementId: "G-72G26HWQR6"
+            };
+            // Initialize Firebase
+            var app = firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            var db = firebase.firestore(app);
+            
+            // FETCH NAME
+            db.collection("Name").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().first_name}`);
+                        console.log(`  ${doc.data().last_name}`);
+                        console.log(`  ${doc.data().Intro}`);
+                        console.log(`  ${doc.data().email}`);
+                        render_name(doc.data().first_name, doc.data().last_name, doc.data().Intro, doc.data().email);
+                    });
+                });
+
+            // FETCH CONTACT
+            db.collection("Contact").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().Twitter}`);
+                        console.log(`  ${doc.data().GitHub}`);
+                        console.log(`  ${doc.data().Linked_In}`);
+                        
+                        document.getElementById("linkedin").href = doc.data().Linked_In;
+                        document.getElementById("twitter").href = doc.data().Twitter;
+                        document.getElementById("github").href = doc.data().GitHub;
+
+                    });
+                });
+
+            // FETCH EDUCATION
+            db.collection("Education").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().education}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_education(doc.id, doc.data().education, doc.data().duration, doc.data().info);
+                    });
+                });
+
+            // FETCH ORGANIZATION
+
+            db.collection("Organization").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().organization}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_organization(doc.id,doc.data().organization, doc.data().duration, doc.data().info);
+                    });
+                });
+
+            // FETCH WORKS
+
+            db.collection("Works").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.data())
+                        console.log(`  ${doc.data().work}`);
+                        console.log(`  ${doc.data().duration}`);
+                        console.log(`  ${doc.data().info}`);
+
+                        render_works(doc.id,doc.data().work, doc.data().duration, doc.data().info);
+                    });
+                });
+        </script>
+        
+        <script>
+            function add_new_education() {
+                console.log('inside app pokemon')
+                var add_education = document.getElementById("add_education").value;
+                var add_duration_education = document.getElementById("add_duration_education").value;
+                var add_info_education = document.getElementById("add_info_education").value;
+                
+                db.collection('Education').add({
+                    education: add_education,
+                    duration: add_duration_education,
+                    info: add_info_education
+                })
+    
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    location.reload();
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                    alert("Error in adding Education");
+                });
+    
+                alert("Education is added");
+            }
+    </script>
+    
+    <script>
+            function add_new_organization() {
+                console.log('inside app organization')
+                var add_organization = document.getElementById("add_organization").value;
+                var add_duration_organization = document.getElementById("add_duration_organization").value;
+                var add_info_organization = document.getElementById("add_info_organization").value;
+    
+                
+                db.collection('Organization').add({
+                    organization: add_organization,
+                    duration: add_duration_organization,
+                    info: add_info_organization
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    location.reload();
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                    alert("Error in adding Organization");
+                });
+    
+                alert("Organization is added");
+            }    
+    </script>
+    
+    <script>
+        function add_new_works() {
+            console.log('inside app works')
+            var add_work = document.getElementById("add_work").value;
+            var add_duration_work = document.getElementById("add_duration_work").value;
+            var add_info_work = document.getElementById("add_info_work").value;
+    
+            
+            db.collection('Works').add({
+                work: add_work,
+                duration: add_duration_work,
+                info: add_info_work
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                location.reload();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                alert("Error in adding Organization");
+            });
+    
+            alert("Work is added");
+        }    
+    </script>
+    
+    <script>
+        function add_new_about_info() {
+            console.log('inside app about')
+            var add_new_info = document.getElementById("add_new_info").value;
+    
+            db.collection('Name').doc('qg1mjmSrELhcV8dlIOCd').update({
+                Intro: add_new_info
+            });
+            alert("About info is updated");
+        }    
+    </script>
+    
+    <script>
+            function add_new_contact_linkedin() {
+            console.log('inside app linkedin')
+            var add_new_linkedin = document.getElementById("add_new_linkedin").value;
+    
+            db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+                Linked_In: add_new_linkedin
+            })
+            .then(function(docRef) {
+                location.reload();
+            })
+            .catch(function(error) {
+                alert("Error in updating linkedin");
+            });
+    
+            alert("LinkedIn is updated"); 
+            }
+    </script>
+    
+    <script>
+        function add_new_contact_github() {
+        console.log('inside app github')
+        var add_new_github = document.getElementById("add_new_github").value;
+    
+        db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+            GitHub: add_new_github
+        })
+        .then(function(docRef) {
+            location.reload();
+        })
+        .catch(function(error) {
+            alert("Error in updating github");
+        });
+    
+        alert("Github is updated"); 
+        }
+    </script>
+    
+    <script>
+        function add_new_contact_twitter() {
+        console.log('inside app github')
+        var add_new_twitter = document.getElementById("add_new_twitter").value;
+    
+        db.collection('Contact').doc('LUHscy9IrffqICHJDZDu').update({
+            Twitter: add_new_twitter
+        })
+        .then(function(docRef) {
+            location.reload();
+        })
+        .catch(function(error) {
+            alert("Error in updating Twitter");
+        });
+    
+        alert("Twitter is updated"); 
+        }
+    </script>
+
+    </body>
+</html>
